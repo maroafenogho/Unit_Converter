@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+
+    <string name="main_menu">Main menu</string>
+
+    <string name="volume">Volume</string>
+
+    <string name="area">Area</string>
+
+    <string name="frequency">Frequency</string>
+
+    <string name="length">Length</string>
+
+    <string name="temperature">Temperature</string>
+
+    <string name="time">Time</string>
+
+    <string name="speed">Speed</string>
+
+    <string name="pressure">Pressure</string>
+
+    <string name="energy">Energy</string>
+
+    <string name="mass">Mass</string>
+
+    <string name="banner_id">ca-app-pub-2866595266782247/5284907382</string>
+
+    <string name="banner_id_use">ca-app-pub-2866595266782247/5284907382</string>
+
+    <string name="admob_interstitial_id">ca-app-pub-2866595266782247/2642432179</string>
+
+    <string name="admob_interstitial_id_test">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="admob_test_app_id">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="_app_id">ca-app-pub-2866595266782247~2459239973</string>
+
+    <string name="test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>

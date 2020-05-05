@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.unitconverter">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/unut_converter_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/unut_converter_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/_app_id" />
+
+        <activity android:name=".ViscosityActivity"
+            android:label="Viscosity[kinematic]"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".SurfaceTensionActivity"
+            android:label="Surface Tension"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".SpecificVolumeActivity"
+            android:label="Specific Volume"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ForceActivity"
+            android:label="Force"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".DensityActivity"
+            android:label="Density"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AngularVelocityActivity"
+            android:label="Angular Velocity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AngularAccelerationActivity"
+            android:label="Angular Acceleration"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".AccelerationActivity"
+            android:label="Acceleration"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AngleActivity"
+            android:label="Angles"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".VolumeActivity"
+            android:label="Volume"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TimeActivity"
+            android:label="Time"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TemperatureActivity"
+            android:label="Temperature"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".FrequencyActivity"
+            android:label="Frequency"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".EnergyActivity"
+            android:label="Energy"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MassActivity"
+            android:label="Mass"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PressureActivity"
+            android:label="Pressure"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AreaActivity"
+            android:label="Area"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SpeedActivity"
+            android:label="Speed"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LengthDistanceActivity"
+            android:label="Length/Distance"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Unit Converter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
