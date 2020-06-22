@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Unit> unitsList = new ArrayList<>();
 
-        unitsList.add(new Unit(R.drawable.length,"Length and Distance"));
+        unitsList.add(new Unit(R.drawable.length,"Length/Distance"));
         unitsList.add(new Unit(R.drawable.mass,"Mass"));
         unitsList.add(new Unit(R.drawable.speed,"Speed"));
 

@@ -25,7 +25,8 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
 
     private Spinner spinnerA, spinnerB;
     private EditText editTextA;
-    private TextView editTextB;
+    private EditText editTextB;
+    //    private TextView editTextB;
     private double mDouble2;
     private double conversionFactor;
 
@@ -79,7 +80,7 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
 //
 //        mDouble1 = Double.parseDouble(text);
 
-        double mDouble1 = Double.parseDouble(editTextA.getText().toString());
+//        double mDouble1 = Double.parseDouble(editTextA.getText().toString());
 //        mDouble2 = Double.parseDouble(editTextB.getText().toString());
 
         // Textwatcher for the EditText field that takes in the input.
@@ -96,7 +97,7 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void afterTextChanged(Editable s) {
                 if (editTextA.getText().toString().equals("")){
-                    editTextA.setText("0");
+                    editTextA.setText(".0");
                 }
                 mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
                 editTextB.setText(String.valueOf(mDouble2));
@@ -119,111 +120,132 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
 
         // nested loop that checks the value of one unit against all others, multiplying by the conversion factor.
         if (a.equals("Joule")) {
-            switch (b) {
-                case "Joule":
-                    conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Kilojoule":
-                    conversionFactor = 0.001;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Gram calorie":
-                    conversionFactor = 0.239006;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Kilo calorie":
-                    conversionFactor = 0.000239006;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Watt hour":
-                    conversionFactor = 0.000277778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Kilowatt hour":
-                    conversionFactor = 2.7778e-7;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Electronvolt":
-                    conversionFactor = 6.242e+18;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "British Thermal Unit":
-                    conversionFactor = 0.000947817;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "US therm":
-                    conversionFactor = 9.4804e-9;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-                case "Foot-pound":
-                    conversionFactor = 0.737562;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
-                    break;
-            }
+
+                switch (b) {
+                    case "Joule":
+                        conversionFactor = 1;
+                        if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Kilojoule":
+                        conversionFactor = 0.001;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Gram calorie":
+                        conversionFactor = 0.239006;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Kilo calorie":
+                        conversionFactor = 0.000239006;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Watt hour":
+                        conversionFactor = 0.000277778;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Kilowatt hour":
+                        conversionFactor = 2.7778e-7;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Electronvolt":
+                        conversionFactor = 6.242e+18;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "British Thermal Unit":
+                        conversionFactor = 0.000947817;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "US therm":
+                        conversionFactor = 9.4804e-9;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                    case "Foot-pound":
+                        conversionFactor = 0.737562;
+                        if (editTextA.getText().toString().length() > 0) {
+                            mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                            editTextB.setText(String.valueOf(mDouble2));}
+                        break;
+                }
         }
 
         if (a.equals("Kilojoule")) {
             switch (b) {
                 case "Joule":
                     conversionFactor = 1000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 239.006;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 0.239006;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 0.277778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 0.000277778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 6.242e+21;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 0.947817;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 9.4804e-6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 737.562;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -232,53 +254,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 4.184;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 0.004184;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 0.001;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 0.00116222;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 1.1622e-6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 2.611e+19;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 0.00396567;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 3.9666e-8;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 3.08596;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -287,8 +319,9 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 4184;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 4.184;
@@ -297,43 +330,51 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
                     break;
                 case "Gram calorie":
                     conversionFactor = 1000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 1.16222;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 0.00116222;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 2.611e+22;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 3.96567;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 3.9666e-5;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 3085.96;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -341,54 +382,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
         if (a.equals("Watt hour")) {
             switch (b) {
                 case "Joule":
-                    conversionFactor = 3600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 3.6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 860.421;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 0.860421;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 1.16222;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 0.00116222;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 2.611e+22;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 3.41214;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 3.413e-5;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 2655.22;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -397,53 +447,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 3.6e+6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 3600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 860421;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 860.421;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 1000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 2.247e+25;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 3412.14;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 0.0341296;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 2.655e+6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -452,53 +512,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 1.6022e-19;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 1.6022e-22;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 3.8293e-20;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 3.8293e-23;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 4.4505e-23;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 4.4505e-26;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 1.5186e-22;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 1.5189e-27;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 1.1817e-19;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -507,53 +577,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 1055.06;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 1.05506;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 252.164;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 0.252164;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 0.293071;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 0.000293071;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 6.585e+21;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 1.0002e-5;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 778.169;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -562,53 +642,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 1.055e+8;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 105480;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 2.521e+7;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 25210.4;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 29300.1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 29.3001;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 6.584e+26;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 99976.1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 7.78e+7;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -617,53 +707,63 @@ public class EnergyActivity extends AppCompatActivity implements AdapterView.OnI
             switch (b) {
                 case "Joule":
                     conversionFactor = 1.35582;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilojoule":
                     conversionFactor = 0.00135582;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gram calorie":
                     conversionFactor = 0.324048;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilo calorie":
                     conversionFactor = 0.000324048;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Watt hour":
                     conversionFactor = 0.000376616;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilowatt hour":
                     conversionFactor = 3.7662e-7;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Electronvolt":
                     conversionFactor = 8.462e+18;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "British Thermal Unit":
                     conversionFactor = 0.00128507;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "US therm":
                     conversionFactor = 1.2854e-8;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Foot-pound":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }

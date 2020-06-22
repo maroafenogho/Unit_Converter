@@ -27,7 +27,8 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
 
     private Spinner spinnerA, spinnerB;
     private EditText editTextA;
-    private TextView editTextB;
+    private EditText editTextB;
+    //    private TextView editTextB;
     private double mDouble2;
     private double conversionFactor;
 
@@ -67,13 +68,13 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
         spinnerB.setAdapter(adapter);
 
         editTextA = findViewById(R.id.textfield_a);
+//        editTextB = findViewById(R.id.textfield_b);
         editTextB = findViewById(R.id.textfield_b);
 
 //        String text= editTextA.getText().toString();
 //
 //        mDouble1 = Double.parseDouble(text);
 
-        double mDouble1 = Double.parseDouble(editTextA.getText().toString());
 //        mDouble2 = Double.parseDouble(editTextB.getText().toString());
 
         // Textwatcher for the EditText field that takes in the input.
@@ -90,7 +91,7 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
             @Override
             public void afterTextChanged(Editable s) {
                 if (editTextA.getText().toString().equals("")){
-                    editTextA.setText("0");
+                    editTextA.setText(".0");
                 }
                 mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
                 editTextB.setText(String.valueOf(mDouble2));
@@ -116,23 +117,27 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
             switch (b) {
                 case "Hertz":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilohertz":
                     conversionFactor = 0.001;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Megahertz":
                     conversionFactor = 1e-6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gigahertz":
                     conversionFactor = 1e-9;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -141,8 +146,9 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
             switch (b) {
                 case "Hertz":
                     conversionFactor = 1000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilohertz":
                     conversionFactor = 1;
@@ -151,13 +157,15 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
                     break;
                 case "Megahertz":
                     conversionFactor = 0.001;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gigahertz":
                     conversionFactor = 1e-6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -166,23 +174,27 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
             switch (b) {
                 case "Hertz":
                     conversionFactor = 1e+6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilohertz":
                     conversionFactor = 1000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Megahertz":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gigahertz":
                     conversionFactor = 1e-6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -191,23 +203,27 @@ public class FrequencyActivity extends AppCompatActivity implements AdapterView.
             switch (b) {
                 case "Hertz":
                     conversionFactor = 1e+9;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Kilohertz":
                     conversionFactor = 1e+6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Megahertz":
                     conversionFactor = 1000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "Gigahertz":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }

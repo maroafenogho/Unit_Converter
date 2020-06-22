@@ -27,7 +27,8 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
 
     private Spinner spinnerA, spinnerB;
     private EditText editTextA;
-    private TextView editTextB;
+    private EditText editTextB;
+    //    private TextView editTextB;
     private double mDouble2;
     private double conversionFactor;
 
@@ -92,7 +93,7 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             @Override
             public void afterTextChanged(Editable s) {
                 if (editTextA.getText().toString().equals("")){
-                    editTextA.setText("0");
+                    editTextA.setText(".0");
                 }
                 mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
                 editTextB.setText(String.valueOf(mDouble2));
@@ -118,63 +119,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 60;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 3600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 86400;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 57.295779513;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 3437.746770785;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 206264.8062471;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 4950355.3499303;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.159154943;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 9.549296586;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 572.957795131;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 13750.98708314;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -182,63 +195,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.016666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 60;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 1440;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.954929659;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 57.295779513;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 3437.746770785;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 82505.922498839;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.002652582;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.159154943;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 9.549296586;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 229.183118052;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -246,63 +271,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.000277778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.016666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 24;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.015915494;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 0.954929659;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 57.295779513;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 1375.098708314;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.00004421;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.002652582;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 0.159154943;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 3.819718634;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -310,63 +347,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.000011574;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.000694444;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 0.041666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.000663146;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 0.039788736;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 2.387324146;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 57.295779513;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.000001842;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.000110524;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 0.006631456;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 0.159154943;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -374,63 +423,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.017453293;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 1.047197551;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 62.831853072;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 1507.964473723;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 60;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 3600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 86400;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.002777778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.166666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 10;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 240;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -438,18 +499,21 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.000290888;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.017453293;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 1.047197551;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 25.132741229;
@@ -458,43 +522,51 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
                     break;
                 case "degree/second":
                     conversionFactor = 0.016666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 60;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 1440;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.000046296;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.002777778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 0.166666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 4;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -502,8 +574,9 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.000004848;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.000290888;
@@ -517,48 +590,57 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
                     break;
                 case "radian/day":
                     conversionFactor = 0.41887902;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.000277778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 0.016666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 24;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.000000772;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.000046296;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 0.002777778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 0.066666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -566,33 +648,39 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.000000202;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.00001212;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 0.000727221;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 0.017453293;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.000011574;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 0.000694444;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 0.041666667;
@@ -601,28 +689,33 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
                     break;
                 case "degree/day":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.000000032;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.000001929;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 0.000115741;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 0.002777778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -630,63 +723,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 6.283185307;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 376.991118431;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 22619.467105846;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 542867.21054032;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 360;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 21600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 1296000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 31104000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 60;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 3600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 86400;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -694,63 +799,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.104719755;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 6.283185307;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 376.991118431;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 9047.786842339;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 360;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 21600;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 518400;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.016666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 60;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 1440;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -758,63 +875,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.001745329;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.104719755;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 6.283185307;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 150.796447372;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 360;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 8640;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.000277778;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.016666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 24;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -822,63 +951,75 @@ public class AngularVelocityActivity extends AppCompatActivity implements Adapte
             switch (b) {
                 case "radian/second":
                     conversionFactor = 0.000072722;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/minute":
                     conversionFactor = 0.004363323;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/hour":
                     conversionFactor = 0.261799388;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "radian/day":
                     conversionFactor = 6.283185307;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/second":
                     conversionFactor = 0.004166667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/minute":
                     conversionFactor = 0.25;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/hour":
                     conversionFactor = 15;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "degree/day":
                     conversionFactor = 360;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/second":
                     conversionFactor = 0.000011574;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/minute":
                     conversionFactor = 0.000694444;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/hour":
                     conversionFactor = 0.041666667;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "revolution/day":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }

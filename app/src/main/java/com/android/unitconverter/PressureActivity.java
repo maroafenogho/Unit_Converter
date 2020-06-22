@@ -26,8 +26,8 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
 
     private Spinner spinnerA, spinnerB;
     private EditText editTextA;
-    private  TextView editTextB;
-    private double mDouble1;
+    private EditText editTextB;
+    //    private TextView editTextB;
     private double mDouble2;
     private double conversionFactor;
 
@@ -74,9 +74,6 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
 //
 //        mDouble1 = Double.parseDouble(text);
 
-        mDouble1 = Double.parseDouble(editTextA.getText().toString());
-//        mDouble2 = Double.parseDouble(editTextB.getText().toString());
-
 
         editTextA.addTextChangedListener(new TextWatcher() {
             @Override
@@ -90,7 +87,7 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
             @Override
             public void afterTextChanged(Editable s) {
                 if (editTextA.getText().toString().equals("")){
-                    editTextA.setText("0");
+                    editTextA.setText(".0");
                 }
                 mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
                 editTextB.setText(String.valueOf(mDouble2));
@@ -112,28 +109,33 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
             switch (b) {
                 case "bar":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pascal":
                     conversionFactor = 100000;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pound per square inch":
                     conversionFactor = 14.5038;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "standard atmosphere":
                     conversionFactor = 0.986923;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "torr":
                     conversionFactor = 750.062;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
 
             }
@@ -143,28 +145,33 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
             switch (b) {
                 case "bar":
                     conversionFactor = 1e-5;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pascal":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pound per square inch":
                     conversionFactor = 0.000145038;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "standard atmosphere":
                     conversionFactor = 9.8692e-6;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "torr":
                     conversionFactor = 0.00750062;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
 
             }
@@ -174,28 +181,33 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
             switch (b) {
                 case "bar":
                     conversionFactor = 0.0689476;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pascal":
                     conversionFactor = 6894.76;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pound per square inch":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "standard atmosphere":
                     conversionFactor = 0.068046;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "torr":
                     conversionFactor = 51.7149;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
 
             }
@@ -205,28 +217,33 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
             switch (b) {
                 case "bar":
                     conversionFactor = 1.01325;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pascal":
                     conversionFactor = 101325;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pound per square inch":
                     conversionFactor = 14.6959;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "standard atmosphere":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "torr":
                     conversionFactor = 760;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
 
             }
@@ -237,28 +254,33 @@ public class PressureActivity extends AppCompatActivity  implements AdapterView.
             switch (b) {
                 case "bar":
                     conversionFactor = 0.00133322;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pascal":
                     conversionFactor = 133.322;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "pound per square inch":
                     conversionFactor = 0.0193368;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "standard atmosphere":
                     conversionFactor = 0.00131579;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "torr":
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0) {
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
 
             }

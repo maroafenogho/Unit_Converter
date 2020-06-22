@@ -25,8 +25,9 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
 
     private Spinner spinnerA, spinnerB;
     private EditText editTextA;
-    private TextView editTextB;
-    private double mDouble1;
+    private EditText editTextB;
+    //    private TextView editTextB; private EditText editTextB;
+    ////    private TextView editTextB;
     private double mDouble2;
     private double conversionFactor;
 
@@ -69,35 +70,7 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
         editTextA = findViewById(R.id.textfield_a);
         editTextB = findViewById(R.id.textfield_b);
 
-//        String text= editTextA.getText().toString();
 //
-//        mDouble1 = Double.parseDouble(text);
-
-        mDouble1 = Double.parseDouble(editTextA.getText().toString());
-//        mDouble2 = Double.parseDouble(editTextB.getText().toString());
-
-
-//        editTextA.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                if (editTextA.getText().toString().equals("")) {
-//                    editTextA.setText("0");
-//                }
-//
-//
-//                mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-//                editTextB.setText(String.valueOf(mDouble2));
-//
-//            }
-//        });
 
         spinnerA.setOnItemSelectedListener(this);
         spinnerB.setOnItemSelectedListener(this);
@@ -124,7 +97,7 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             conversionFactor = 1;
                             mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
@@ -132,8 +105,9 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         }
                     });
                     conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "kelvin":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -148,14 +122,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = Double.parseDouble(editTextA.getText().toString()) + 273.15;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
-                    mDouble2 = Double.parseDouble(editTextA.getText().toString()) + 273.15;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = Double.parseDouble(editTextA.getText().toString()) + 273.15;
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "fahrenheit":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -170,14 +145,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = (Double.parseDouble(editTextA.getText().toString()) * 9/5) + 32;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
-                    mDouble2 = (Double.parseDouble(editTextA.getText().toString()) * 9/5) + 32;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = (Double.parseDouble(editTextA.getText().toString()) * 9/5) + 32;
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "rankine":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -192,14 +168,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = Double.parseDouble(editTextA.getText().toString()) *  9/5 + 491.67 ;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
-                    mDouble2 = Double.parseDouble(editTextA.getText().toString()) *  9/5 + 491.67 ;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = Double.parseDouble(editTextA.getText().toString()) *  9/5 + 491.67 ;
+                        editTextB.setText(String.valueOf(mDouble2));}
 
                     break;
             }
@@ -220,16 +197,16 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             conversionFactor = 1;
                             mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
-                    conversionFactor = 1;
-                    mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "celsius":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -244,14 +221,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = Double.parseDouble(editTextA.getText().toString()) - 273.15;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
-                    mDouble2 = Double.parseDouble(editTextA.getText().toString()) - 273.15;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    if (editTextA.getText().toString().length() > 0){
+                        mDouble2 = Double.parseDouble(editTextA.getText().toString()) - 273.15;
+                        editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "fahrenheit":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -266,14 +244,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = (Double.parseDouble(editTextA.getText().toString()) *273.15) * 9/5 + 32;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = (Double.parseDouble(editTextA.getText().toString()) *273.15) * 9/5 + 32;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "rankine":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -288,7 +267,7 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             conversionFactor = 1.8;
                             mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
@@ -317,7 +296,7 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             conversionFactor = 1;
                             mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
@@ -325,8 +304,9 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         }
                     });
                     conversionFactor = 1;
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "kelvin":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -341,14 +321,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = (Double.parseDouble(editTextA.getText().toString()) - 32) * 5/9 + 273.15;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = (Double.parseDouble(editTextA.getText().toString()) - 32) * 5/9 + 273.15;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "celsius":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -369,8 +350,9 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = (Double.parseDouble(editTextA.getText().toString()) - 32) * 5/9;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "rankine":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -385,14 +367,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = Double.parseDouble(editTextA.getText().toString())  + 459.67;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = Double.parseDouble(editTextA.getText().toString())  + 459.67;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }
@@ -412,16 +395,17 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             conversionFactor = 1;
                             mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     conversionFactor = 1;
                     mDouble2 = conversionFactor * Double.parseDouble(editTextA.getText().toString());
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "kelvin":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -436,14 +420,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = (Double.parseDouble(editTextA.getText().toString()) * 5/9);
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = (Double.parseDouble(editTextA.getText().toString()) * 5/9);
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "celsius":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -458,14 +443,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = (Double.parseDouble(editTextA.getText().toString())  - 491.67) * 5/9;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = (Double.parseDouble(editTextA.getText().toString())  - 491.67) * 5/9;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
                 case "fahrenheit":
                     editTextA.addTextChangedListener(new TextWatcher() {
@@ -480,14 +466,15 @@ public class TemperatureActivity extends AppCompatActivity implements AdapterVie
                         @Override
                         public void afterTextChanged(Editable s) {
                             if (editTextA.getText().toString().equals("")) {
-                                editTextA.setText("0");
+                                editTextA.setText(".0");
                             }
                             mDouble2 = Double.parseDouble(editTextA.getText().toString()) - 459.67;
                             editTextB.setText(String.valueOf(mDouble2));
                         }
                     });
+                    if (editTextA.getText().toString().length() > 0){
                     mDouble2 = Double.parseDouble(editTextA.getText().toString()) - 459.67;
-                    editTextB.setText(String.valueOf(mDouble2));
+                    editTextB.setText(String.valueOf(mDouble2));}
                     break;
             }
         }

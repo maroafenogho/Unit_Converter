@@ -24,10 +24,11 @@
             android:layout_height="match_parent"
             android:ellipsize="end"
             android:gravity="center"
-            android:maxLines="2"
+            android:maxLines="1"
+            android:padding="2dp"
             android:textColor="#414141"
             android:textStyle="normal"
             tools:text="Length/Distance" />
 
-</LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
